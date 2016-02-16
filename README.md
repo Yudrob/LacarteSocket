@@ -14,6 +14,13 @@
 
     Access
 
-  * #### tester
+## Install
 
-    Dev tests
+Clone o repositório
+
+    git clone https://github.com/Yudrob/LacarteSocket.git
+
+Instale as dependencias
+
+    npm init
+    npm install
