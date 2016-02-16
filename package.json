@@ -1,0 +1,17 @@
+{
+  "name": "lacartesocket",
+  "version": "0.0.1",
+  "description": "Servidor Socket para o serviço LaCarte",
+  "main": "server.js",
+  "dependencies": {
+    "mongodb": "^2.1.7",
+    "ws": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
