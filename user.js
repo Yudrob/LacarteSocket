@@ -4,17 +4,26 @@ var db = require('./mong.js')
 var User = function () {
 
   return {
-    getMarkers: function (pos, callback) {
-      if (pos === null) throw 'Null pos given'
-      let markers = []
-      markers.push({
-        lat: 0.000,
-        lng: 0.000,
-        name: 'The Royal Oak',
-        type: 'Pub',
-        typeCode: 2
+    getMarkers: function (viewport, callback) {
+      if (viewport === null) throw 'Null viewport given'
+      db.getMarkersToPos(viewport, function (err, markers) {
+        if (err) callback(err)
+        else callback(null, markers)
       })
-      callback(null, markers)
+    },
+    insertMarker: function (marker, callback) {
+      db.addNewMarker(marker, (err, result) => {
+        console.log(err)
+        console.log(result)
+      })
+    },
+    getAllMarkers: function (callback) {
+      db.getAllMarkers((err, result) => {
+        if (err) {
+          console.log(err)
+        }
+        console.log(result)
+      })
     }
   }
 }
